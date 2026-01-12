@@ -7,7 +7,7 @@ The code includes functionality to visualize camera poses.
 This code and the extracted data is not strictly tested; for absolutely guaranteed data loading, use raw VRS files.
 
 What this repo contains:
-- Code to read cam pose at mp4_frames
+- Code to read cam pose at _mp4_frames_
 - Code to visualize cam poses
 
 # Example usage
@@ -15,6 +15,8 @@ What this repo contains:
 see `example.py`.
 
 ```python
+from novrs_lib.novrs_reader_basic import NoVRSReader
+
 # Example usage
 vid = 'P01-20240202-161948'
 frame = 100
@@ -31,9 +33,15 @@ from PIL import Image
 drawer = HoverDrawer(reader)
 rend = drawer.render_frame(frame)
 Image.fromarray(rend).save(f'{vid}_frame{frame:04d}_rendered.png')
+``` 
+
+Visualised output example:
+![Example Rendered Image](P01-20240202-161948_frame0100_rendered.png)
 
 
-# Additional functionalities:
+Other functionalities that require `calibration` is also supported:
+```python
+... 
 # 3. Undistort images using calibration info stored in intermediate_data/ 
 reader_with_mp4 = NoVRSReader(vid=vid, 
                         load_mp4=True,
@@ -43,10 +51,6 @@ img_undistorted = reader_with_mp4.undistort_image(img)
 
 # 4. Or do other things with reader.rgb_camera_calibration. (omitted)
 ```
-
-Visualised output example:
-![Example Rendered Image](P01-20240202-161948_frame0100_rendered.png)
-
 
 ## Data Directory Structure
 
