@@ -1,14 +1,16 @@
 # HD-EPIC Camera Pose Reading Without VRS
 
 This repository contains helper code to read camera poses that correspond to **mp4_frames**, without the need of the VRS. 
-THe camera poses are stored in **intermediate_data/**, the link to download the intermediate data can be found in [Temporary Link](https://uob-my.sharepoint.com/:u:/g/personal/ms21614_bristol_ac_uk/IQCybo9ggvtbQpf8akG3EbZZAYzz2bwO6LiZPVEyz2amjqA?e=uQ6Amy).
-The code includes functionality to visualize camera poses.
 
-This code and the extracted data is not strictly tested; for absolutely guaranteed data loading, use raw VRS files.
+First, download the `intermediate_data/` at [Temporary Link](https://uob-my.sharepoint.com/:u:/g/personal/ms21614_bristol_ac_uk/IQCybo9ggvtbQpf8akG3EbZZAYzz2bwO6LiZPVEyz2amjqA?e=uQ6Amy).
+Then, structure the data directory following instruction below.
+The `intermediate_data/` include pre-extracted _intrinsics, calibration and camera poses_ of 155 / 156 videos. The video `P03-20240217-130208` is currently not included.
+
+This code and the extracted data are not strictly tested; for absolutely guaranteed data loading, please use raw VRS files.
 
 What this repo contains:
-- Code to read cam pose at _mp4_frames_
-- Code to visualize cam poses
+- Code to read camera pose at _mp4_frames_
+- Code to visualize camera poses
 
 # Example usage
 
